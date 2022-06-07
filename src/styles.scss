@@ -1,4 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body,
+.remove-margin {
+  margin: 0 !important;
+}
+
+// Theme Colors
+$primary: #307abd;
+$primaryLight: lighten($primary, 20%);
+$black: #000;
+$white: #fff;
+$dimgray: #666;
+$lightgray: #f8f6f7;
+
+.primary {
+  color: $primary;
+}
+
+.primary-light {
+  color: $primaryLight;
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}
+
+.dimgray {
+  color: $dimgray;
+}
+
+.light-gray {
+  color: $lightgray;
+}
+
+// Background Colors
+.primary-bg {
+  background-color: $primary  !important;
+}
+
+.primary-light-bg {
+  background-color: $primaryLight;
+}
+
+.black-bg {
+  background-color: $black;
+}
+
+.white-bg {
+  background-color: $white;
+}
+
+.dimgray-bg {
+  background-color: $dimgray;
+}
+
+.lightgray-bg {
+  background-color: $lightgray;
+}
+
+// Dimensioning
+.full-width {
+  width: 100%;
+}
+
+// Navigation
+
+.logo {}
+
+.search-wrapper {
+  background-color: $white;
+  border: 1px solid $dimgray;
+  border-radius: 50px;
+  height: 2.5rem;
+
+  .mat-input-element{
+    padding-top: 0.5rem !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent !important;
+    display: none !important;
+  }
+
+  .mat-form-field-appearance-legacy .mat-form-field-label{
+    color: $dimgray  !important;
+    font-size: 1rem !important;
+    font-style: italic !important;
+    margin-top: .35rem;
+  }
+}
+
+// Spacing
+.padding-1-rem {
+  padding: 1rem 0;
+}
+
+.padding-1-rem-around {
+  padding: 1rem;
+}
+
+// Pointer
+.pointer {
+  cursor: pointer;
+}

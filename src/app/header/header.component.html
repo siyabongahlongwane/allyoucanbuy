@@ -1,0 +1,51 @@
+<div class="black-bg full-width padding-1-rem" fxLayout="row" fxLayoutAlign="center start">
+  <div fxFlex="90" fxLayout="column" fxLayoutAlign="start center ">
+    <div class="white full-width" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+          <div fxFlex="35" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap=".5rem"> <i class="fa fa-phone"></i>
+            <span>Call us: 067 014 6942</span>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap=".5rem"><span>Support </span> <span> | </span>
+            <span> Free Shipping</span>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap=".8rem">
+        <img src="{{ social.icon }}" width="20px" title="{{ social.label }}" *ngFor="let social of socials"
+          class="fa {{ social }}">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lightgray-bg full-width padding-1-rem" fxLayout="row" fxLayoutAlign="center start">
+  <div fxFlex="90" fxLayout="column" fxLayoutAlign="start center ">
+    <div class="full-width" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="20" fxLayout="column" fxLayoutAlign="start stretch" class="logo">
+        <h1 class="remove-margin">All you can buy!</h1>
+      </div>
+      <div class="search-wrapper padding-1-rem-around" fxFlex="50" fxLayout="row" fxLayoutAlign="space-between center ">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+          <mat-icon mat-button [matMenuTriggerFor]="menu" class="pointer dimgray">menu</mat-icon>
+          <span><b>Categories</b> </span>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1rem">
+          <mat-form-field appearance="legacy" floatLabel="never">
+            <input matInput placeholder="Search Products...">
+          </mat-form-field>
+          <mat-icon class="dimgray pointer">search</mat-icon>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1rem">
+        <button mat-mini-fab class="primary-bg">
+          <mat-icon>person</mat-icon>
+        </button>
+        <label class="black">MY ACCOUNT</label>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-menu #menu="matMenu">
+  <div *ngFor="let category of categories">{{ category }}</div>
+</mat-menu>
