@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(./splide.scss);
 
 html,
 body {
@@ -27,7 +28,7 @@ $lightgray: #f8f6f7;
   color: $primaryLight;
 }
 
-.black {
+.black, .active {
   color: $black;
 }
 
@@ -83,7 +84,7 @@ $lightgray: #f8f6f7;
   border-radius: 50px;
   height: 2.5rem;
 
-  .mat-input-element{
+  .mat-input-element {
     padding-top: 0.5rem !important;
   }
 
@@ -92,7 +93,7 @@ $lightgray: #f8f6f7;
     display: none !important;
   }
 
-  .mat-form-field-appearance-legacy .mat-form-field-label{
+  .mat-form-field-appearance-legacy .mat-form-field-label {
     color: $dimgray  !important;
     font-size: 1rem !important;
     font-style: italic !important;
@@ -112,4 +113,34 @@ $lightgray: #f8f6f7;
 // Pointer
 .pointer {
   cursor: pointer;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.nav-wrapper {
+  height: 50px;
+  .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content{
+    background: $black;
+  }
+}
+
+.full-height {
+  height: 100%;
+}
+
+.shop-now-btn {
+  padding: 0.2rem 1.5rem;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.uppercase-text{
+  text-transform: uppercase;
+}
+
+.nav-link:hover{
+  color: $black;
+  transition: all 0.5s;
 }

@@ -1,0 +1,6 @@
+<div fxFill fxLayout="row" fxLayoutAlign="start stretch">
+  <div fxFlex="100" fxLayout="column" fxLayoutAlign="start stretch">
+    <app-header (getCurrentRoute)="retrieveCurrentRoute($event)"></app-header>
+    <router-outlet></router-outlet>
+  </div>
+</div>
