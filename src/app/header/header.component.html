@@ -46,6 +46,20 @@
     </div>
   </div>
 </div>
+
+<div class="primary-bg nav-wrapper" fxLayout="row" fxLayoutAlign="center stretch">
+  <div fxFlex="90" fxLayout="column" fxLayoutAlign="center start">
+    <div class="full-width" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="white bold-text" fxFlex="60" fxLayout="row" fxLayoutAlign="space-between center">
+        <span *ngFor="let item of navItems" [routerLink]="item.route"  routerLinkActive="active" class="text-white pointer nav-link">{{ item.name }}</span>
+      </div>
+      <div fxLayout="row" fxFlex="10" fxLayoutAlign="end center" fxLayoutGap=".5em">
+        <mat-icon matBadge="5" class="white pointer">favorite</mat-icon>
+        <mat-icon matBadge="12" class="white pointer">shopping_cart</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
 <mat-menu #menu="matMenu">
   <div *ngFor="let category of categories">{{ category }}</div>
 </mat-menu>

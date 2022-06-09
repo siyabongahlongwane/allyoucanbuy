@@ -9,11 +9,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './header/header.component';
+import { LandingComponent } from './landing/landing.component';
+import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContainerComponent } from './container/container.component';
+import { AboutComponent } from './about/about.component';
+import { BlogComponent } from './blog/blog.component';
+import { ShopComponent } from './shop/shop.component';
+import { BecomeAVendorComponent } from './become-avendor/become-avendor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    LandingComponent,
+    HomeCarouselComponent,
+    ContactComponent,
+    ContainerComponent,
+    AboutComponent,
+    BlogComponent,
+    ShopComponent,
+    BecomeAVendorComponent
   ],
   imports: [
     BrowserModule,
