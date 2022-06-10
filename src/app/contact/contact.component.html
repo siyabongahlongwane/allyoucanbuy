@@ -1,1 +1,66 @@
-<p>contact works!</p>
+<div fxLayout="row" fxLayoutAlign="center stretch">
+  <div fxFlex="90" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1rem">
+    <h1 class="black">Contact us</h1>
+    <div fxLayout="row">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14328.544227597456!2d28.367855!3d-26.12710645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e953e9f8ccb301b%3A0x6d57824964c8588f!2sCrystal%20Park%2C%20Benoni%2C%201515!5e0!3m2!1sen!2sza!4v1654801820496!5m2!1sen!2sza"
+        width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+      <div fxFlex="20" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap=".5rem">
+        <h2 class="remove-margin margin-bottom-1em">Connect with us</h2>
+        <div *ngFor="let item of contactDetails" fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap=".8rem">
+          <mat-icon class="primary">{{ item.icon }}</mat-icon>
+          <label> {{ item.text }} </label>
+        </div>
+      </div>
+      <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+        <h2 class="remove-margin">Write to us</h2>
+        <form class="full-width" fxLayout="row wrap" #contactForm="ngForm" fxLayoutAlign="space-between ">
+          <div fxFlex="48" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #name="ngModel" [(ngModel)]="contact.name" type="text" name="name" matInput
+                placeholder="Enter name" />
+              <mat-error *ngIf="submitted && contactForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="48" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #email="ngModel" [(ngModel)]="contact.email" type="text" name="email" matInput
+                placeholder="Enter email" />
+              <mat-error *ngIf="submitted && contactForm.invalid || (email.invalid || email.touched) || email.errors?.required">Email is
+                required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="48" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #phone="ngModel" [(ngModel)]="contact.phone" type="text" name="phone" matInput
+                placeholder="Enter phone" />
+              <mat-error *ngIf="submitted && contactForm.invalid || (phone.invalid || phone.touched) || phone.errors?.required">Phone is
+                required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="48" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #subject="ngModel" [(ngModel)]="contact.subject" type="text" name="subject" matInput
+                placeholder="Enter subject" />
+              <mat-error *ngIf="submitted && contactForm.invalid || (subject.invalid || subject.touched) || subject.errors?.required">Subject
+                is required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="padding-1rem" fxFlex="100" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <textarea rows="4" required #message="ngModel" [(ngModel)]="contact.message" type="text" name="message"
+                matInput placeholder="Enter message"></textarea>
+              <mat-error *ngIf="submitted && contactForm.invalid || (message.invalid || message.touched) || message.errors?.required">Message
+                is required!</mat-error>
+            </mat-form-field>
+          </div>
+        </form>
+        <button [disabled]="!contactForm.valid" (click)="sendMessage(contactForm)" mat-raised-button class="primary-bg white">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

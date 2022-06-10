@@ -19,6 +19,7 @@ $black: #000;
 $white: #fff;
 $dimgray: #666;
 $lightgray: #f8f6f7;
+$red: red;
 
 .primary {
   color: $primary;
@@ -28,7 +29,9 @@ $lightgray: #f8f6f7;
   color: $primaryLight;
 }
 
-.black, .active {
+.black,
+.active,
+.nav-link:hover {
   color: $black;
 }
 
@@ -36,12 +39,17 @@ $lightgray: #f8f6f7;
   color: $white;
 }
 
-.dimgray {
+.dimgray,
+.mat-form-field-appearance-legacy .mat-form-field-label {
   color: $dimgray;
 }
 
 .light-gray {
   color: $lightgray;
+}
+
+.red {
+  color: $red;
 }
 
 // Background Colors
@@ -53,11 +61,13 @@ $lightgray: #f8f6f7;
   background-color: $primaryLight;
 }
 
-.black-bg {
+.black-bg,
+.nav-wrapper .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
   background-color: $black;
 }
 
-.white-bg {
+.white-bg,
+.search-wrapper {
   background-color: $white;
 }
 
@@ -79,7 +89,6 @@ $lightgray: #f8f6f7;
 .logo {}
 
 .search-wrapper {
-  background-color: $white;
   border: 1px solid $dimgray;
   border-radius: 50px;
   height: 2.5rem;
@@ -94,7 +103,6 @@ $lightgray: #f8f6f7;
   }
 
   .mat-form-field-appearance-legacy .mat-form-field-label {
-    color: $dimgray  !important;
     font-size: 1rem !important;
     font-style: italic !important;
     margin-top: .35rem;
@@ -102,14 +110,17 @@ $lightgray: #f8f6f7;
 }
 
 // Spacing
-.padding-1-rem {
+.padding-1rem{
   padding: 1rem 0;
 }
 
-.padding-1-rem-around {
+.padding-1rem-around {
   padding: 1rem;
 }
 
+.margin-bottom-1em {
+  margin-bottom: 1em !important;
+}
 // Pointer
 .pointer {
   cursor: pointer;
@@ -121,9 +132,6 @@ $lightgray: #f8f6f7;
 
 .nav-wrapper {
   height: 50px;
-  .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content{
-    background: $black;
-  }
 }
 
 .full-height {
@@ -136,11 +144,23 @@ $lightgray: #f8f6f7;
   font-weight: 500;
 }
 
-.uppercase-text{
+.uppercase-text {
   text-transform: uppercase;
 }
 
-.nav-link:hover{
-  color: $black;
+.nav-link:hover {
   transition: all 0.5s;
+}
+
+.large-font{
+  font-size: 4rem !important;
+}
+
+.med-font{
+  font-size: 2rem;
+  margin: auto;
+}
+
+.slider-img .text-wrapper {
+  margin-left: 10%;
 }
