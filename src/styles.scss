@@ -13,7 +13,8 @@ body,
 }
 
 // Theme Colors
-$primary: #307abd;
+// $primary: #307abd;
+$primary: #2F56E9;
 $primaryLight: lighten($primary, 20%);
 $black: #000;
 $white: #fff;
@@ -79,6 +80,11 @@ $red: red;
   background-color: $lightgray;
 }
 
+.login-bg {
+  background: url(assets/img/login-image.jpg);
+  background-size: cover;
+}
+
 // Dimensioning
 .full-width {
   width: 100%;
@@ -110,7 +116,7 @@ $red: red;
 }
 
 // Spacing
-.padding-1rem{
+.padding-1rem {
   padding: 1rem 0;
 }
 
@@ -118,9 +124,14 @@ $red: red;
   padding: 1rem;
 }
 
+.margin-top-1em {
+  margin-top: 1em !important;
+}
+
 .margin-bottom-1em {
   margin-bottom: 1em !important;
 }
+
 // Pointer
 .pointer {
   cursor: pointer;
@@ -152,15 +163,29 @@ $red: red;
   transition: all 0.5s;
 }
 
-.large-font{
+.large-font {
   font-size: 4rem !important;
 }
 
-.med-font{
+.med-font {
   font-size: 2rem;
   margin: auto;
 }
 
 .slider-img .text-wrapper {
   margin-left: 10%;
+}
+
+.centered-form {
+  height: 65vh;
+}
+
+.login-form {
+  border-radius: 50px 0 0 0;
+}
+
+.rounded-btn {
+  border-radius: 1em !important;
+  padding: 0.4em !important;
+  font-size: 1em;
 }

@@ -1,0 +1,198 @@
+<!-- <div class="lightgray-bg" fxFill fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="70" fxLayout="column" fxLayoutAlign="center center">
+      <div style="box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);" class="centered-form full-width" fxLayout="row" fxLayoutAlign="center stretch">
+        <div class="primary-bg" fxFlex="25" fxLayout="column" fxLayoutAlign="center center">
+          <span class="white">Follow us</span>
+        </div>
+        <div class="full-width" fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex="40" fxLayout="column" fxLayoutAlign="center center">
+            <form class="full-width" fxLayout="column" #registerForm="ngForm"  fxLayoutAlign="center center">
+              <div class="full-width" fxLayout="column" fxLayoutAlign="start stretch" >
+                <mat-form-field class="full-width" appearance="legacy">
+                  <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                    placeholder="Enter name" />
+                  <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="full-width" fxLayout="column">
+                <mat-form-field class="full-width" appearance="legacy">
+                  <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                    placeholder="Enter name" />
+                  <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="full-width" fxLayout="column">
+                <mat-form-field class="full-width" appearance="legacy">
+                  <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                    placeholder="Enter name" />
+                  <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="full-width" fxLayout="column">
+                <mat-form-field class="full-width" appearance="legacy">
+                  <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                    placeholder="Enter name" />
+                  <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> -->
+
+<!-- <div fxFill fxLayout="row" class="primary-bg" fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxFlex="60" >
+    <mat-card-content fxLayout="row" fxFlex="60vh" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex="35" class="black-bg full-height"  fxLayoutAlign="center center">
+        <div fxLayout="row">
+
+        </div>
+        <div fxLayout="row">
+          <p class="white">Connect with us</p>
+        </div>
+      </div>
+      <div fxLayout="row" class="white-bg">
+        <form  fxFlex="80" class="full-width" fxLayout="column" #registerForm="ngForm"  fxLayoutAlign="center center">
+          <div class="full-width" fxLayout="column" fxLayoutAlign="start stretch" >
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                placeholder="Enter name" />
+              <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="full-width" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                placeholder="Enter name" />
+              <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="full-width" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                placeholder="Enter name" />
+              <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="full-width" fxLayout="column">
+            <mat-form-field class="full-width" appearance="legacy">
+              <input required #name="ngModel" [(ngModel)]="register.name" type="text" name="name" matInput
+                placeholder="Enter name" />
+              <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+<div fxFill fxLayout="row" class="">
+  <div fxFlex="50" fxLayout="column" fxLayoutAlign="center stretch">
+    <img src="../../assets/img/login-image.jpg">
+  </div>
+  <div class="lightgray-bg login-form" fxFlex="50" fxLayout="column" fxLayoutAlign="center stretch">
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <div *ngIf="isLogin" fxLayout="column" fxLayoutAlign="center center">
+        <h2 class="remove-margin">Customer Login</h2>
+        <p class="remove-margin">Welcome back, login below!</p>
+      </div>
+      <div *ngIf="!isLogin" fxLayout="column" fxLayoutAlign="center center">
+        <h2 class="remove-margin">Customer Registration</h2>
+        <p class="remove-margin">Hello, register below!</p>
+      </div>
+      <form *ngIf="isLogin" #loginForm="ngForm" fxLayoutAlign="center center">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+          <div fxLayout="column" fxLayoutAlign="start stretch" >
+            <label class="bold-text">Email</label>
+            <mat-form-field floatLabel='never' appearance="legacy">
+              <input required #email="ngModel" [(ngModel)]="login.email" type="text" name="email" matInput
+                placeholder="Enter email" />
+                    <mat-icon matSuffix class="primary">mail</mat-icon>
+              <mat-error *ngIf="submitted && loginForm.invalid || (email.invalid || email.touched) || email.errors?.required">Email is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="start stretch" >
+            <label class="bold-text">Password</label>
+            <mat-form-field floatLabel='never' appearance="legacy">
+              <input required #password="ngModel" [(ngModel)]="login.password" type="text" name="password" matInput
+                placeholder="Enter password" />
+                    <mat-icon matSuffix class="primary">visibility</mat-icon>
+              <mat-error *ngIf="submitted && loginForm.invalid || (password.invalid || password.touched) || password.errors?.required">Password is required!
+              </mat-error>
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="end center">
+              <p class="primary pointer remove-margin" (click)="openResetDialog()" >Forgot password?</p>
+            </div>
+          </div>
+          <div class="margin-top-1em" fxLayout="column" fxLayoutAlign="start stretch" >
+          <button mat-raised-button class="primary-bg white uppercase-text rounded-btn bold-text">Login</button>
+          </div>
+          <div class="margin-top-1em" fxLayout="row" fxLayoutAlign="center" >
+            <p class="remove-margin">Don't have an account? <span (click)="isLogin = !isLogin" class="bold-text primary pointer">Create Account</span></p>
+            </div>
+        </div>
+      </form>
+      <form *ngIf="!isLogin" #registerForm="ngForm" fxLayoutAlign="center center">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+          <div fxLayout="column" fxLayoutAlign="start stretch" >
+            <label *ngIf="false" class="bold-text">Name</label>
+            <mat-form-field floatLabel='never' appearance="legacy">
+              <input required #name="ngModel" [(ngModel)]="login.name" type="text" name="name" matInput
+                placeholder="Enter name" />
+                    <mat-icon matSuffix class="primary">account</mat-icon>
+              <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="start stretch" >
+            <label *ngIf="false" class="bold-text">Phone</label>
+            <mat-form-field floatLabel='never' appearance="legacy">
+              <input required #phone="ngModel" [(ngModel)]="login.phone" type="text" name="phone" matInput
+                placeholder="Enter phone" />
+                    <mat-icon matSuffix class="primary">phone</mat-icon>
+              <mat-error *ngIf="submitted && registerForm.invalid || (phone.invalid || phone.touched) || phone.errors?.required">Phone is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="start stretch" >
+            <label *ngIf="false" class="bold-text">Email</label>
+            <mat-form-field floatLabel='never' appearance="legacy">
+              <input required #email="ngModel" [(ngModel)]="login.email" type="text" name="email" matInput
+                placeholder="Enter email" />
+                    <mat-icon matSuffix class="primary">mail</mat-icon>
+              <mat-error *ngIf="submitted && registerForm.invalid || (email.invalid || email.touched) || email.errors?.required">Email is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="start stretch" >
+            <label *ngIf="false" class="bold-text">Password</label>
+            <mat-form-field floatLabel='never' appearance="legacy">
+              <input required #password="ngModel" [(ngModel)]="login.password" type="text" name="password" matInput
+                placeholder="Enter password" />
+                    <mat-icon matSuffix class="primary">visibility</mat-icon>
+              <mat-error *ngIf="submitted && registerForm.invalid || (password.invalid || password.touched) || password.errors?.required">Password is required!
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="margin-top-1em" fxLayout="column" fxLayoutAlign="start stretch" >
+          <button mat-raised-button class="primary-bg white uppercase-text rounded-btn bold-text">Login</button>
+          </div>
+          <div class="margin-top-1em" fxLayout="row" fxLayoutAlign="center" >
+            <p class="remove-margin">Already have an account? <span (click)="isLogin = !isLogin" class="bold-text primary pointer">Login</span></p>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

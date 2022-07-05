@@ -17,6 +17,8 @@ import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { ShopComponent } from './shop/shop.component';
 import { BecomeAVendorComponent } from './become-avendor/become-avendor.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordDialogComponent } from './forgot-password-dialog/forgot-password-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { BecomeAVendorComponent } from './become-avendor/become-avendor.componen
     AboutComponent,
     BlogComponent,
     ShopComponent,
-    BecomeAVendorComponent
+    BecomeAVendorComponent,
+    LoginComponent,
+    ForgotPasswordDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,7 @@ import { BecomeAVendorComponent } from './become-avendor/become-avendor.componen
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ForgotPasswordDialogComponent]
 })
 export class AppModule { }
