@@ -7,11 +7,12 @@ import { ContactComponent } from "./contact/contact.component";
 import { ContainerComponent } from "./container/container.component";
 import { HeaderComponent } from "./header/header.component";
 import { LandingComponent } from "./landing/landing.component";
+import { LoginComponent } from "./login/login.component";
 import { ShopComponent } from "./shop/shop.component";
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "store/home" },
-  // { path: "**", pathMatch: "full", redirectTo: "store/home" },
+  { path: "login", component: LoginComponent },
   {
     path: "store",
     component: ContainerComponent,
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: "become-a-vendor", component: BecomeAVendorComponent },
     ],
   },
+  { path: "**", pathMatch: "full", redirectTo: "store/home" },
 ];
 
 @NgModule({
