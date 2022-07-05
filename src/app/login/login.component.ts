@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { ForgotPasswordDialogComponent } from "../forgot-password-dialog/forgot-password-dialog.component";
+import { CommonService } from "../services/common.service";
 
 @Component({
   selector: "app-login",
@@ -20,10 +21,9 @@ export class LoginComponent implements OnInit {
     email: null,
     password: null,
   };
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private common: CommonService) {}
 
   ngOnInit() {
-    this.openResetDialog();
   }
 
   openResetDialog() {
@@ -39,4 +39,24 @@ export class LoginComponent implements OnInit {
     });
   }
   resetUserPassword() {}
+
+  loginUser(form){
+    if(form.invalid){
+      // open snackbar from service
+      this.common.openSnackbar('All fields are required!');
+      return false;
+    } else{
+      // send data to API
+    }
+  }
+
+  registerUser(form){
+    if(form.invalid){
+      // open snackbar from service
+      this.common.openSnackbar('All fields are required!');
+      return false;
+    } else{
+      // send data to API
+    }
+  }
 }
