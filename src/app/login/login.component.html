@@ -102,13 +102,13 @@
   </div>
   <div class="lightgray-bg login-form" fxFlex="50" fxLayout="column" fxLayoutAlign="center stretch">
     <div fxLayout="column" fxLayoutAlign="start stretch">
-      <div *ngIf="isLogin" fxLayout="column" fxLayoutAlign="center center">
+      <div class="margin-bottom-1em" *ngIf="isLogin" fxLayout="column" fxLayoutAlign="center center">
         <h2 class="remove-margin">Customer Login</h2>
         <p class="remove-margin">Welcome back, login below!</p>
       </div>
       <div *ngIf="!isLogin" fxLayout="column" fxLayoutAlign="center center">
         <h2 class="remove-margin">Customer Registration</h2>
-        <p class="remove-margin">Hello, register below!</p>
+        <p class="remove-margin ">Hello, register below!</p>
       </div>
       <form *ngIf="isLogin" #loginForm="ngForm" fxLayoutAlign="center center">
         <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
@@ -136,7 +136,7 @@
             </div>
           </div>
           <div class="margin-top-1em" fxLayout="column" fxLayoutAlign="start stretch" >
-          <button mat-raised-button class="primary-bg white uppercase-text rounded-btn bold-text">Login</button>
+          <button (click)="loginUser(loginForm)" mat-raised-button class="primary-bg white uppercase-text rounded-btn bold-text">Login</button>
           </div>
           <div class="margin-top-1em" fxLayout="row" fxLayoutAlign="center" >
             <p class="remove-margin">Don't have an account? <span (click)="isLogin = !isLogin" class="bold-text primary pointer">Create Account</span></p>
@@ -150,7 +150,7 @@
             <mat-form-field floatLabel='never' appearance="legacy">
               <input required #name="ngModel" [(ngModel)]="login.name" type="text" name="name" matInput
                 placeholder="Enter name" />
-                    <mat-icon matSuffix class="primary">account</mat-icon>
+                    <mat-icon matSuffix class="primary">person</mat-icon>
               <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
               </mat-error>
             </mat-form-field>
@@ -186,7 +186,7 @@
             </mat-form-field>
           </div>
           <div class="margin-top-1em" fxLayout="column" fxLayoutAlign="start stretch" >
-          <button mat-raised-button class="primary-bg white uppercase-text rounded-btn bold-text">Login</button>
+          <button (click)="registerUser(registerForm)" mat-raised-button class="primary-bg white uppercase-text rounded-btn bold-text">Login</button>
           </div>
           <div class="margin-top-1em" fxLayout="row" fxLayoutAlign="center" >
             <p class="remove-margin">Already have an account? <span (click)="isLogin = !isLogin" class="bold-text primary pointer">Login</span></p>
