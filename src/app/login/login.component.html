@@ -150,7 +150,7 @@
             <mat-form-field floatLabel='never' appearance="legacy">
               <input required #name="ngModel" [(ngModel)]="login.name" type="text" name="name" matInput
                 placeholder="Enter name" />
-                    <mat-icon matSuffix class="primary">account</mat-icon>
+                    <mat-icon matSuffix class="primary">person</mat-icon>
               <mat-error *ngIf="submitted && registerForm.invalid || (name.invalid || name.touched) || name.errors?.required">Name is required!
               </mat-error>
             </mat-form-field>
