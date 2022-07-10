@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter} from "@angular/core";
 import { Router } from "@angular/router";
+import { CommonService } from "../services/common.service";
 
 @Component({
   selector: "app-header",
@@ -7,7 +8,7 @@ import { Router } from "@angular/router";
   styles: [],
 })
 export class HeaderComponent implements OnInit {
-  @Output() getCurrentRoute = new EventEmitter<{route: string}>();
+  isLoggedIn: any = false;
   socials: any[] = [
     {
       icon: "../../assets/img/facebook.png",
@@ -62,12 +63,48 @@ export class HeaderComponent implements OnInit {
       route: "become-a-vendor",
     },
   ];
-  constructor(public router: Router) {}
+
+  accountNav: any[] = [
+    {
+      icon: 'account_circle',
+      name: "My Profile",
+      route: "../profile",
+      disabled: this.isLoggedIn
+    },
+    {
+      icon: 'money',
+      name: "My Orders",
+      route: "../orders",
+      disabled: this.isLoggedIn
+    },
+    {
+      icon: 'power_settings_new',
+      name: "Logout",
+      route: "",
+      disabled: this.isLoggedIn
+    }
+  ]
+  user: any;
+  constructor(public router: Router, private common: CommonService) {}
 
 
-
-  sendCurrentRoute(route){
-    this.getCurrentRoute.emit(route);
+  ngOnInit() {
+    if(this.common.getUser()){
+      this.user = this.common.getUser();
+      this.isLoggedIn = true;
+    }
   }
-  ngOnInit() {}
+
+  logout(){
+    localStorage.removeItem('userObj');
+    this.router.navigate(['../login'])
+  }
+
+  navigate(route){
+    if(route === ''){
+      this.logout()
+    } else{
+      this.router.navigate(route);
+    }
+  }
 }

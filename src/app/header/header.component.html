@@ -38,10 +38,11 @@
         </div>
       </div>
       <div class="pointer" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1rem">
-        <button mat-mini-fab class="primary-bg">
-          <mat-icon>person</mat-icon>
+        <button [matMenuTriggerFor]="nav" mat-mini-fab class="primary-bg">
+            <mat-icon>person</mat-icon>
         </button>
-        <label class="black">MY ACCOUNT</label>
+        <label *ngIf="isLoggedIn" class="bold-text">Hi, {{ user.userDetails.name.split(" ")[0] }}</label>
+        <label routerLink="../login" *ngIf="!isLoggedIn" class="bold-text pointer">Log in</label>
       </div>
     </div>
   </div>
@@ -62,4 +63,10 @@
 </div>
 <mat-menu #menu="matMenu">
   <div *ngFor="let category of categories">{{ category }}</div>
+</mat-menu>
+<mat-menu #nav="matMenu">
+  <button (click)="navigate(item.route)" *ngFor="let item of accountNav" mat-menu-item>
+    <mat-icon>{{ item.icon }}</mat-icon>
+    <span>{{ item.name }}</span>
+  </button>
 </mat-menu>

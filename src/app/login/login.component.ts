@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
+import { Router } from "@angular/router";
 import { ForgotPasswordDialogComponent } from "../forgot-password-dialog/forgot-password-dialog.component";
+import { ApiService } from "../services/api.service";
 import { CommonService } from "../services/common.service";
 
 @Component({
@@ -11,6 +13,7 @@ import { CommonService } from "../services/common.service";
 export class LoginComponent implements OnInit {
   submitted: boolean = false;
   isLogin: boolean = true;
+  showPassword: boolean = false;
   register: any = {
     name: null,
     phone: null,
@@ -21,7 +24,7 @@ export class LoginComponent implements OnInit {
     email: null,
     password: null,
   };
-  constructor(private dialog: MatDialog, private common: CommonService) {}
+  constructor(private dialog: MatDialog, private common: CommonService, private api: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -38,24 +41,33 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  resetUserPassword() {}
+  resetUserPassword() { }
 
-  loginUser(form){
-    if(form.invalid){
-      // open snackbar from service
+  loginUser(form) {
+    if (form.invalid) {
       this.common.openSnackbar('All fields are required!');
       return false;
-    } else{
-      // send data to API
+    } else {
+      let userDetailsStr = `email=${form.value.email}&password=${form.value.password}`
+      this.api.login('users/login?' + userDetailsStr).subscribe(res => {
+        if (res) {
+          this.common.openSnackbar(res.msg);
+          this.common.storeUser(res.user);
+          this.router.navigate(['../store/home']);
+        }
+      }, err => {
+        console.log(err);
+        this.common.openSnackbar(err.error.msg);
+      });
     }
   }
 
-  registerUser(form){
-    if(form.invalid){
+  registerUser(form) {
+    if (form.invalid) {
       // open snackbar from service
       this.common.openSnackbar('All fields are required!');
       return false;
-    } else{
+    } else {
       // send data to API
     }
   }

@@ -7,7 +7,11 @@ export interface User {
     phone: string;
     email: string;
     password: string;
-    isVerified: boolean
+    role: {
+      id: string;
+      description: string;
+    };
+    isVerified: boolean;
   };
   address: {
     street: string;
