@@ -7,9 +7,15 @@ import { MatSnackBar } from '@angular/material';
 export class CommonService {
 
   constructor(private snackbar: MatSnackBar) { }
+  getUser() {
+    return JSON.parse(localStorage.getItem('userObj'));
+  }
 
-  openSnackbar(msg){
-    console.log(msg);
-    this.snackbar.open(msg, 'Dismiss', {duration: 3000});
+  storeUser(user) {
+    localStorage.setItem('userObj', JSON.stringify(user));
+  }
+
+  openSnackbar(msg) {
+    this.snackbar.open(msg, 'Dismiss', { duration: 3000 });
   }
 }

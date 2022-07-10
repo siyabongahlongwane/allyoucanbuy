@@ -33,7 +33,7 @@ import { ForgotPasswordDialogComponent } from './forgot-password-dialog/forgot-p
     ShopComponent,
     BecomeAVendorComponent,
     LoginComponent,
-    ForgotPasswordDialogComponent
+    ForgotPasswordDialogComponent,
   ],
   imports: [
     BrowserModule,
